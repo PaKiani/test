@@ -1,52 +1,124 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قالب ساده برای تمرین گیت</title>
     <link rel="stylesheet" href="./style.css">
-    <button id="changeColorBtn">تغییر رنگ هدر</button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script src="./app.js"></script>
-    <header class="site-header">
-        <h1>قالب ساده HTML & CSS</h1>
-        <p>این یک پروژه ساده برای تمرین گیت است.</p>
+    <header class="site-header" id="siteHeader">
+        <div class="header-content">
+            <h1>قالب ساده HTML & CSS</h1>
+            <p>این یک پروژه ساده برای تمرین گیت است.</p>
+            <button id="changeColorBtn" class="color-btn">
+                <i class="fas fa-palette"></i> تغییر رنگ هدر
+            </button>
+        </div>
     </header>
 
     <nav class="navbar">
-        <ul>
-            <li><a href="#about">درباره پروژه</a></li>
-            <li><a href="#features">ویژگی‌ها</a></li>
-            <li><a href="#contact">تماس</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>پروژه Git</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about"><i class="fas fa-info-circle"></i> درباره پروژه</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i> ویژگی‌ها</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> تماس</a></li>
+                <li><a href="https://github.com" target="_blank"><i class="fab fa-github"></i> گیت‌هاب</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
     <main class="container">
         <section id="about" class="card">
+            <div class="card-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
             <h2>درباره پروژه</h2>
             <p>
                 این یک قالب خیلی ساده است تا بتونی رویش کامیت بزنی، برنچ بسازی
-                و با گیت تمرین کنی.
+                و با گیت تمرین کنی. از این پروژه می‌توانی برای یادگیری اصول اولیه
+                Git مانند commit، branch، merge و push استفاده کنی.
             </p>
+            <div class="git-commands">
+                <h3>دستورات Git برای تمرین:</h3>
+                <ul>
+                    <li><code>git init</code> - ایجاد ریپازیتوری جدید</li>
+                    <li><code>git add .</code> - اضافه کردن تغییرات</li>
+                    <li><code>git commit -m "پیام"</code> - ثبت تغییرات</li>
+                    <li><code>git branch نام-برنچ</code> - ایجاد برنچ جدید</li>
+                    <li><code>git checkout نام-برنچ</code> - جابجایی بین برنچ‌ها</li>
+                </ul>
+            </div>
         </section>
 
         <section id="features" class="card">
+            <div class="card-icon">
+                <i class="fas fa-star"></i>
+            </div>
             <h2>ویژگی‌ها</h2>
-            <ul>
-                <li>ساختار ساده و قابل فهم</li>
-                <li>فقط یک فایل HTML و یک فایل CSS</li>
-                <li>مناسب برای تمرین گیت و گیت‌هاب</li>
+            <ul class="features-list">
+                <li><i class="fas fa-check"></i> ساختار ساده و قابل فهم</li>
+                <li><i class="fas fa-check"></i> فقط یک فایل HTML و یک فایل CSS</li>
+                <li><i class="fas fa-check"></i> مناسب برای تمرین گیت و گیت‌هاب</li>
+                <li><i class="fas fa-check"></i> طراحی واکنش‌گرا برای موبایل و دسکتاپ</li>
+                <li><i class="fas fa-check"></i> دارای افکت‌های تعاملی و انیمیشن</li>
+                <li><i class="fas fa-check"></i> قابلیت تغییر رنگ با JavaScript</li>
             </ul>
         </section>
 
         <section id="contact" class="card">
+            <div class="card-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
             <h2>تماس</h2>
             <p>می‌تونی این بخش رو بعداً با فرم یا اطلاعات خودت گسترش بدی.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-user"></i>
+                    <span>نام: پروژه تمرین Git</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>تاریخ ایجاد: ۱۴۰۳</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>برنچ فعلی: main</span>
+                </div>
+            </div>
+            <button class="simulate-commit" id="simulateCommit">
+                <i class="fas fa-code-commit"></i> شبیه‌سازی یک کامیت
+            </button>
+            <div class="commit-history" id="commitHistory">
+                <h3>تاریخچه کامیت‌های شبیه‌سازی شده:</h3>
+                <ul id="commitList"></ul>
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>ساخته شده برای تمرین گیت</p>
+        <div class="footer-content">
+            <p>ساخته شده برای تمرین گیت</p>
+            <div class="footer-icons">
+                <i class="fas fa-code"></i>
+                <i class="fab fa-git-alt"></i>
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js"></i>
+            </div>
+            <p class="footer-note">تمرین ساده فالب گیت‌هاب !</p>
+        </div>
     </footer>
+
+    <script src="./app.js"></script>
 </body>
 </html>

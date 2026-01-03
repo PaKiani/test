@@ -287,4 +287,5 @@ git clone https://github.com/PaKiani/test.git
 ---
 
 **موفق باشید در یادگیری Git و GitHub!** 💻
-لینک (جهت مشاهده دمو)[https://pakiani.github.io/test/]✨
+لینک 
+(جهت مشاهده دمو)[https://pakiani.github.io/test/]
